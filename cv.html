@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Web Developer</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #0ea5e9;
+            --text-dark: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Printable PDF controls */
+        .controls {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: right;
+        }
+
+        .print-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Header Layout */
+        header {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-left h2 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .header-right a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* Section Rules */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        /* Skills Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-item {
+            font-size: 0.95rem;
+        }
+
+        .skill-item strong {
+            color: var(--primary);
+        }
+
+        /* Job & Education Blocks */
+        .item-block {
+            margin-bottom: 15px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .item-sub {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .item-block ul {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Reference Layout */
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .ref-card {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .ref-card strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Print Media Queries */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+            .controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="controls">
+        <button class="print-btn" id="downloadBtn">Print / Save as PDF</button>
+    </div>
+
+    <div class="cv-container">
+        <header>
+            <div class="header-left">
+                <!-- Change to your Name -->
+                <img src="img/photo.jpg" style="width: 200px; height: 200px; border-radius: 5px;" alt="">
+                <h1 id="userName">MD. MOUNTASIR MAMUN</h1>
+                <h2>Website Developer</h2>
+            </div>
+            <div class="header-right">
+                <p>📍 Noakhali,Chittagong, Bangladesh</p>
+                <p>📞 +880 1522103442</p>
+                <p>✉️ <a href="mailto:youremail@gmail.com">mamunsahaji@gmail.com</a></p>
+                <p>🌐 <a href="https://github.com" target="_blank">:https://github.com/Mamun</a></p>
+                <p>💼 <a href="https://linkedin.com" target="_blank">:https://www.linkedin.com/Mamun</a></p>
+            </div>
+        </header>
+
+        <!-- Career Objective -->
+        <section>
+            <h3>Career Objective</h3>
+            <p>"Student-centric EEE Instructor with 2+ years of classroom and laboratory teaching experience. Seeking to deliver high-quality education at [Institution Name] by leveraging expertise in power systems, embedded systems, and curriculum development to foster critical thinking and academic excellence."</p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Circuit Design & Analysis: </strong> Analog and digital circuit prototyping, breadboarding, and testing.</div>
+                <div class="skill-item"><strong>PCB Design & Layout: </strong>  Designing single/multi-layer Printed Circuit Boards.</div>
+                <div class="skill-item"><strong>PLC Programming:  </strong>  Designing logic for Siemens (TIA Portal), Allen-Bradley, Delta, or Mitsubishi PLCs.</div>
+                <div class="skill-item"><strong>Switchgear & Protection:  </strong>  Circuit breakers, relays, fuses, and protective device coordination.</div>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section>
+            <h3>Projects</h3>
+            • <strong>Pure Sine Wave Inverter (IPS) Design :</strong> Building a custom digital IPS circuit that converts DC battery voltage into clean AC power for delicate household appliances. <br>
+            • <strong>Wireless Power Transfer (WPT) System :</strong> Designing inductive coupling coils to transmit electrical energy wirelessly over short distances (like wireless smartphone charging pads). <br>
+            • <strong>Speed Control of Three-Phase Induction Motor :</strong> Utilizing Variable Frequency Drives (VFD) and space vector pulse width modulation (SVPWM) for precise industrial motor control. <br>
+            • <strong>Solar-Powered Battery Charging Station with MPPT :</strong> A Maximum Power Point Tracking (MPPT) charge controller circuit to extract maximum efficiency from solar arrays.
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h3>Education</h3>
+            <div class="item-block">
+                <div class="item-header">
+                    <span>B.Sc. in Electical & Electronics Engineering</span>
+                    <span>CGPA: 3.08 / 4.00</span>
+                </div>
+                <div class="item-sub">
+                    <span>Daffodil International University</span>
+                    <span>Passing Year: 2018</span>
+                </div>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <span>Diploama-In-Electronics Technology</span>
+                    <span>CGPA: 3.70 / 4.00</span>
+                </div>
+                <div class="item-sub">
+                    <span>Noakhali Ideal Polytechnic Institute</span>
+                    <span>Passing Year: 2014</span>
+                </div>
+            </div>
+
+             <div class="item-block">
+                <div class="item-header">
+                    <span>SSC</span>
+                    <span>CGPA: 4.13 / 5.00</span>
+                </div>
+                <div class="item-sub">
+                    <span>Noakhali Zilla School</span>
+                    <span>Passing Year: 2009</span>
+                </div>
+            </div>
+        </section>
+        <h3>Job Experience</h3>
+                <div class="item-block">
+                <div class="item-header">
+                    <span>Instructor Electical & Electronics Department</span>
+                    <span>Work Experience : 2 Year's</span>
+                </div>
+                <div class="item-sub">
+                    <span>Shyamoli Ideal Polytechnic Institute</span>
+                    <span>2019-21</span>
+                </div>
+                </div>
+
+                <div class="item-block">
+                <div class="item-header">
+                    <span>Sub-Assistant Engineer</span>
+                    <span>Product Quality Monitization</span>
+                </div>
+                <div class="item-sub">
+                    <span>KONKA Electronics LTD.</span>
+                    <span>2021 To Still Now</span>
+                </div>
+                </div>
+        <section>
+
+        </section>
+        <!-- References -->
+        <section>
+            <h3>References</h3>
+            <div class="reference-grid">
+                <div class="ref-card">
+                    <strong>Dr. Ahsan</strong>
+                    <span>Professor, Dept. of EEE</span>
+                    <span>Daffodil International University</span>
+                    <span>Email: ahsan.professor@diu.edu.com</span>
+                    <span>Phone: +880 1736482302</span>
+                </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript logic to trigger printing mechanics seamlessly
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
